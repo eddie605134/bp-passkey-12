@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import LoginButton from './LoginButton';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import LoginButton from './components/LoginButton';
 
 function App() {
   useEffect(() => {
@@ -12,9 +14,14 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <LoginButton />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<LoginButton />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
