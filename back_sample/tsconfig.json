@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2017", 
     "module": "commonjs",
     "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "esModuleInterop": true
   },
-  "include": ["**/*"], // This will include all .ts files in the back_sample folder and subfolders
-  "exclude": ["node_modules", "dist"] // This remains the same to exclude node_modules and dist
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

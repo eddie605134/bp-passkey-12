@@ -4,5 +4,6 @@ export const fetcher = (url: string, data: any) => {
       'Content-Type': 'application/json',
     },
     ...data,
+    credentials: 'include',
   }).then(res => res.json());
 };

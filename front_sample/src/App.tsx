@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import LoginButton from './components/LoginButton';
+import Dashboard from './components/Dashboard';
 
 function App() {
   useEffect(() => {

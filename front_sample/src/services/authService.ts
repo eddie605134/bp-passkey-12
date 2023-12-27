@@ -1,31 +1,29 @@
 // src/services/authService.ts
 import { fetcher } from '../utils/fetcher';
 
-const BASE_URL = '/api/auth';
+const BASE_URL = 'http://localhost:8000';
 
-export const getRegistrationOptions = (username: string) => {
-  return fetcher(`${BASE_URL}/register`, {
-    method: 'POST',
-    body: JSON.stringify({ username }),
+export const getRegistrationOptions = () => {
+  return fetcher(`${BASE_URL}/generate-registration-options`, {
+    method: 'GET',
   });
 };
 
-export const getAuthenticationOptions = (username: string) => {
-  return fetcher(`${BASE_URL}/login`, {
-    method: 'POST',
-    body: JSON.stringify({ username }),
+export const getAuthenticationOptions = () => {
+  return fetcher(`${BASE_URL}/generate-authentication-options`, {
+    method: 'GET',
   });
 };
 
 export const sendRegistrationResponse = (attestation: any) => {
-  return fetcher(`${BASE_URL}/register/response`, {
+  return fetcher(`${BASE_URL}/verify-registration`, {
     method: 'POST',
     body: JSON.stringify(attestation),
   });
 };
 
 export const sendAuthenticationResponse = (assertion: any) => {
-  return fetcher(`${BASE_URL}/login/response`, {
+  return fetcher(`${BASE_URL}/verify-authentication`, {
     method: 'POST',
     body: JSON.stringify(assertion),
   });
